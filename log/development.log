@@ -1,0 +1,58 @@
+Started GET "/favicon.ico" for 127.0.0.1 at 2023-04-17 17:46:03 +0300
+Started GET "/api/session" for 127.0.0.1 at 2023-04-17 17:46:03 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#frontend_index as */*
+Processing by Api::SessionsController#show as JSON
+  Parameters: {"path"=>"favicon"}
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms | Allocations: 6603)
+
+
+
+ArgumentError - File /home/john/development/wakuu/public/index.html does not exist:
+  app/controllers/static_pages_controller.rb:3:in `frontend_index'
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `current_user'
+Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 15.0ms | Allocations: 19375)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2023-04-17 17:46:09 +0300
+Processing by Api::UsersController#show as JSON
+  Parameters: {"name"=>"Johnalist", "description"=>"Updated description", "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:20:in `show'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 3.0ms | Allocations: 485)
+Completed 200 OK in 66ms (Views: 15.8ms | ActiveRecord: 4.4ms | Allocations: 11595)
+
+
+Started GET "/api/users/1" for 127.0.0.1 at 2023-04-17 17:55:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#show as JSON
+  Parameters: {"name"=>"Johnalist", "description"=>"Updated description", "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:20:in `show'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 3.9ms | Allocations: 383)
+Completed 200 OK in 41ms (Views: 11.0ms | ActiveRecord: 4.4ms | Allocations: 8661)
+
+
+Started GET "/" for ::1 at 2023-05-02 16:42:51 +0300
+
+ActiveRecord::ConnectionNotEstablished - connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?:
+
+Started POST "/__better_errors/faf57036b5b85924/variables" for ::1 at 2023-05-02 16:42:52 +0300
+Started GET "/favicon.ico" for ::1 at 2023-05-02 16:42:52 +0300
+
+ActiveRecord::ConnectionNotEstablished - connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?:
+
+Started GET "/" for ::1 at 2023-05-02 16:45:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.7.4/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 81.6ms | Allocations: 366)
+Completed 200 OK in 301ms (Views: 144.0ms | ActiveRecord: 0.0ms | Allocations: 2602)
+
+
